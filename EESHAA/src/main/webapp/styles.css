@@ -1,0 +1,145 @@
+html {
+    background: #787878;
+}
+h3 {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    max-width: 1500px;
+    min-width: 360px;
+    margin: 0px auto;
+    background: #818181;
+    padding:0px 5px;
+    text-align:center;
+    height: 1500px;
+}
+ 
+.page-title  {
+    font-size:120%;
+    text-align: left;
+    margin:10px 0px;
+}
+.header-container {
+    text-align: left;
+    border-bottom: 1px solid #d7006b;
+    position: relative;
+    background: #d7006b;
+    color: white;
+}
+.header-container .header-bar  {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+.header-container .header-bar  a  {
+    color: #ffffff;
+    font-size: bold;
+}
+
+ .demo-container{
+     text-align: center;
+ }
+ 
+.footer-container {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 0px 0px 0px;
+    border-top: 1px solid #d20069;
+}
+.menu-container {
+    text-align: right;
+    margin: 10px 5px;
+}
+.menu-container a {
+    margin: 5px 5px 5px 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+.site-name {
+    font-size:200%;
+    margin:10px 10px 10px 0px;
+    padding: 5px;
+}
+ 
+.container  {
+    margin: 5px 0px;
+}
+ 
+ .login-container, .account-container {
+    padding: 5px;
+    text-align:left;
+    margin:20px 0px;
+}
+ 
+.customer-info-container {
+    text-align: left;
+    border: 1px solid #ce0067;
+    padding: 0px 5px;
+}
+.product-preview-container {
+	
+    width: 250px;
+    margin: 10px ;
+    display: inline-block;
+    text-align:left;
+}
+ 
+.product-preview-container input {
+    width: 50px;
+}
+ 
+ 
+.product-image {
+    width: 120px;
+    height: 80px;
+}
+ 
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+    margin:5px;
+}
+ 
+ 
+.navi-item {
+    margin: 5px 5px 5px 20px;
+}
+ 
+.button-update-sc {
+    color: red;
+    margin: 5px 5px 5px 20px;
+}
+ 
+.button-send-sc {
+    color: red;
+    margin: 5px 5px 5px 20px;
+}
+ 
+.error-message {
+    font-size: 90%;
+    color: red;
+    font-style: italic;
+}
+ 
+.price {
+    color: #ffffff;
+    font-weight: bold;
+}
+ 
+.subtotal {
+    color: #ffffff;
+    font-weight: bold;
+}
+ 
+.total {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 120%;
+}
+ 
+table td {
+    padding: 5px;
+}

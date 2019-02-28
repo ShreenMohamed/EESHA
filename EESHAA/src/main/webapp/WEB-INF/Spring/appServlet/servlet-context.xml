@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+	 http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans
+		 http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+ <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+  
+ <mvc:annotation-driven />
+	
+ <mvc:default-servlet-handler/>
+ 
+ <mvc:resources mapping="/resources/**" location="/resources/" />
+	
+ <context:component-scan base-package="com.eeshamarket.*"  />
+	
+ <context:property-placeholder location="classpath:ds-hibernate-cfg.properties" />
+
+ <bean id="userDetail"
+		class="com.eeshamarket.authentication.AuthenticationService" />
+
+ <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+ </bean>
+	
+ <bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages/validator" />
+		<property name="defaultEncoding" value="UTF-8" />
+ </bean>
+	
+ <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
+		<property name="driverClassName" value="${ds.database-driver}" ></property>
+		<property name="url" value="${ds.url}"></property>
+		<property name="username" value="${ds.username}"></property>
+		<property name="password" value="${ds.password}"></property>
+ </bean>
+ 
+ <bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="current_session_context_class">${current_session_context_class}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.eeshamarket.entity"></property>
+ </bean>
+	
+ <bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+ </bean>
+	
+ <tx:annotation-driven transaction-manager="transactionManager"/>
+	
+
+</beans>
