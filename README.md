@@ -4,5 +4,8 @@ Tools: Eclips , WebDesign , MySql database , jdbc, Spring , Hibernate ,JSP and m
 
 
 For Login:
+* For Manager
 USERNAME :Manager      PASSWORD :123
+
+* For Employee 
 USERNAME :Employee     PASSWORD :123
